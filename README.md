@@ -8,7 +8,6 @@
 - Moto Code
 - Dev Superior
 
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/FelipeFelixhub/projeto-api/blob/main/license) 
 
 # Tecnologias utilizadas
 ## Back end
@@ -25,7 +24,7 @@
 - CSS
 - JavaScript  
 
-
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/FelipeFelixhub/projeto-api/blob/main/license) 
 
 
 
