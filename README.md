@@ -1,7 +1,8 @@
 # projeto-api
 Projeto realizado criando uma API com Java (Spring Boot).
 
-## Referncias utilizadas:
+
+## Referências utilizadas:
 - Moto Code
 - Dev Superior
 
