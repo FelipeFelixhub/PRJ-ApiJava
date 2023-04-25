@@ -1,5 +1,7 @@
-# projeto-api
+# PRJ-ApiJava
 Projeto realizado criando uma API com Java (Spring Boot).
+Tela de cadastro de usuario 
+CRUD
 
 
 ## Referências utilizadas:
