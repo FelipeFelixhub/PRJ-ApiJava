@@ -1,7 +1,13 @@
-# projeto-api
-Projeto realizado criando uma API com Java (Spring Boot).
+# PRJ-ApiJava
+- Projeto realizado criando uma API com Java (Spring Boot).
+- Tela de cadastro de usuario 
+- CRUD
 
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/FelipeFelixhub/projeto-api/blob/main/license) 
+
+## Referências utilizadas:
+- Moto Code
+- Dev Superior
+
 
 # Tecnologias utilizadas
 ## Back end
@@ -18,7 +24,8 @@ Projeto realizado criando uma API com Java (Spring Boot).
 - CSS
 - JavaScript  
 
-
+------------------------------------------------------------------------------------------------------------
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/FelipeFelixhub/projeto-api/blob/main/license) 
 
 
 
