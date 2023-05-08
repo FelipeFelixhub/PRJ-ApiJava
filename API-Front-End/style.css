@@ -1,18 +1,28 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: Quicksand,sans-serif;
 }
 
+
+
 h1 {
-    margin: 40px 0 40px 0;
+    font-size: 3rem;
+    margin: 80px 0 10px 0;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 
 body {
-    background-color: black;
+    
+    background: linear-gradient(to left, #472ce3, #de1a6c);
+    border-radius: 3rem;
+    
 }
+
 
 .box,form {
     gap: 20px;
@@ -27,7 +37,14 @@ input {
     height: 25px;
     border-radius: 30px;
     padding: 0 15px 0 15px;
+   
 }
+
+.input-group {
+    position: relative;
+}
+
+
 
 button {
 
@@ -45,12 +62,35 @@ button {
 	font-weight:bold;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
+        
 }
+
+#mensagem {
+    transition: all 0.52s;
+    background: #FFF;
+    border: #777 solid 1px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.52);
+    position: fixed;
+    top: -150px;
+    width: 50%;
+    padding: 25px 0;
+    text-align: center;
+    left: 25%;
+    opacity: 0;
+  }
+  
+  #mensagem.ver {
+    top: 75px;
+    opacity: 1;
+  }
+
 button:hover {
 	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
 	background-color:#f6f6f6;
 }
 button:active {
 	position:relative;
-	top: 2px;px;
+	top: 2px;
 }
+
+

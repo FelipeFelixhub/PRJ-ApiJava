@@ -1,44 +1,47 @@
 const formulario = document.querySelector("form");
 const botao = document.querySelector("button");
-const inome = document.querySelector(".nome");
-const iemail = document.querySelector(".email");
-const isenha = document.querySelector(".senha");
-const itelefone = document.querySelector(".telefone");
+const nomeInput = document.querySelector(".nome");
+const emailInput = document.querySelector(".email");
+const senhaInput = document.querySelector(".senha");
+const telefoneInput = document.querySelector(".telefone");
 
+const cadastrar = () => {
+  const { value: nome } = nomeInput;
+  const { value: email } = emailInput;
+  const { value: senha } = senhaInput;
+  const { value: telefone } = telefoneInput;
 
-function cadastrar () {
+  fetch(`http://localhost:8080/usuarios`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ nome, email, senha, telefone }),
+  })
+    .then(handleResponse)
+    .then(() => console.log("Usuário cadastrado com sucesso"))
+    .catch((err) =>
+      console.log("Ocorreu um erro ao cadastrar o usuário:", err)
+    );
+};
 
-    fetch("http://localhost:8080/usuarios",
-        {
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            method: "POST",
-            body: JSON.stringify({
-                nome: inome.value,
-                email: iemail.value,
-                senha: isenha.value,
-                telefone: itelefone.value
-            })
-        })
-        .then(function (res) { console.log(res) })
-        .catch(function (res) { console.log(res) })
+const handleResponse = (res) => {
+  if (res.ok) {
+    return res.json();
+  } else {
+    throw new Error("Ocorreu um erro ao cadastrar o usuário");
+  }
+};
 
-}
+const limpar = () => {
+  nomeInput.value = "";
+  emailInput.value = "";
+  senhaInput.value = "";
+  telefoneInput.value = "";
+};
 
-function limpar () {
-    inome.value = "",
-    iemail.value = "",
-    isenha.value = "",
-    itelefone.value = ""
-
-}
-
-formulario.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-   cadastrar();
-   limpar();
-
+formulario.addEventListener("submit", (event) => {
+  event.preventDefault();
+  cadastrar();
+  limpar();
 });
