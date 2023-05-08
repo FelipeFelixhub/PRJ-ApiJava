@@ -18,7 +18,7 @@ h1 {
 
 body {
     
-    background: linear-gradient(to left, #472ce3, #de1a6c);
+    background: linear-gradient(to left, #0f58eb, #b8e0f2);
     border-radius: 3rem;
     
 }
@@ -34,10 +34,15 @@ body {
 
 input {
     width: 250px;
-    height: 25px;
+    height: 30px;
     border-radius: 30px;
     padding: 0 15px 0 15px;
    
+}
+
+
+input:valid {
+    border-color: green;
 }
 
 .input-group {

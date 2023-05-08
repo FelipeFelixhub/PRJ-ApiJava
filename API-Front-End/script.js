@@ -1,47 +1,64 @@
+
+// Declaracao das constantes
+
 const formulario = document.querySelector("form");
 const botao = document.querySelector("button");
-const nomeInput = document.querySelector(".nome");
-const emailInput = document.querySelector(".email");
-const senhaInput = document.querySelector(".senha");
-const telefoneInput = document.querySelector(".telefone");
+const inome = document.querySelector(".nome");
+const iemail = document.querySelector(".email");
+const isenha = document.querySelector(".senha");
+const itelefone = document.querySelector(".telefone");
 
-const cadastrar = () => {
-  const { value: nome } = nomeInput;
-  const { value: email } = emailInput;
-  const { value: senha } = senhaInput;
-  const { value: telefone } = telefoneInput;
+// Mascara para o telefone (11)23456-7890
 
-  fetch(`http://localhost:8080/usuarios`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ nome, email, senha, telefone }),
-  })
-    .then(handleResponse)
-    .then(() => console.log("Usuário cadastrado com sucesso"))
-    .catch((err) =>
-      console.log("Ocorreu um erro ao cadastrar o usuário:", err)
-    );
-};
 
-const handleResponse = (res) => {
-  if (res.ok) {
-    return res.json();
-  } else {
-    throw new Error("Ocorreu um erro ao cadastrar o usuário");
+const handlePhone = (event) => {
+    let input = event.target
+    input.value = phoneMask(input.value)
   }
-};
+  
+  const phoneMask = (value) => {
+    if (!value) return ""
+    value = value.replace(/\D/g,'')
+    value = value.replace(/(\d{2})(\d)/,"($1) $2")
+    value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+    return value
+  }
 
-const limpar = () => {
-  nomeInput.value = "";
-  emailInput.value = "";
-  senhaInput.value = "";
-  telefoneInput.value = "";
-};
+  // Funcoes
 
-formulario.addEventListener("submit", (event) => {
-  event.preventDefault();
-  cadastrar();
-  limpar();
+  function cadastrar () {
+
+    fetch("http://localhost:8080/usuarios",
+        {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            body: JSON.stringify({
+                nome: inome.value,
+                email: iemail.value,
+                senha: isenha.value,
+                telefone: itelefone.value
+            })
+        })
+        .then(function (res) { console.log(res) })
+        .catch(function (res) { console.log(res) })
+
+}
+
+function limpar () {
+    inome.value = "",
+    iemail.value = "",
+    isenha.value = "",
+    itelefone.value = ""
+
+}
+
+formulario.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+   cadastrar();
+   limpar();
+
 });

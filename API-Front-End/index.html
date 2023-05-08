@@ -19,19 +19,19 @@
         <form action="">
             <div class="input-group">
                 <i class="fas fa-user"></i>
-            <input type="text" class="nome" name="nome" placeholder="Nome">
+            <input type="text" class="nome" name="nome" required maxlength="30" placeholder="Nome">
             </div>
             <div class="input-group">
                 <i class="fas fa-envelope"></i>
-                <input type="text" class="email" name="email" placeholder="Email">
+                <input type="text" class="email" name="email" required maxlength="50" placeholder="Email">
             </div>
             <div class="input-group">
                 <i class="fas fa-lock"></i>
-                <input type="password" class="senha" name="senha" placeholder="Senha">
+                <input type="password" class="senha" name="senha" required placeholder="Senha">
             </div>
             <div class="input-group">
                 <i class="fas fa-phone"></i>
-                <input type="text" class="telefone" name="telefone" placeholder="Telefone">
+                <input type="text" class="telefone" name="telefone" maxlength="15" onkeyup="handlePhone(event)" required placeholder="Telefone">
             </div>
             
             <button>Cadastrar</button>    
